@@ -10,7 +10,7 @@ function searchForCards() {
 
 function showDeck() {
     onlne = false;
-    makeRequest('GET', BASE_URL + '/api/deck/getUsers/' + userID).then((response) => {
+    makeRequest('GET', EXTERNAL_URL + '/api/deck/getUsers/' + userID).then((response) => {
         let data = JSON.parse(JSON.stringify(response));
         outputSearchResults(data);
     })
@@ -59,14 +59,14 @@ function outputSearchResults(cards) {
                 cardData['url'] = card.imageUrl;
 
                 if (onlne) {
-                    makeRequest('POST', BASE_URL + '/api/deck/add', JSON.stringify(cardData)).then((response) => {
+                    makeRequest('POST', EXTERNAL_URL + '/api/deck/add', JSON.stringify(cardData)).then((response) => {
                         console.log(response);
                         toDel = document.getElementById(card.name);
                         console.log(toDel);
                         newDivOne.parentNode.removeChild(newDivOne);
                     });
                 } else if (!onlne) {
-                    makeRequest('DELETE', BASE_URL + '/api/deck/delete/' + card.id, JSON.stringify(cardData)).then((response) => {
+                    makeRequest('DELETE', EXTERNAL_URL + '/api/deck/delete/' + card.id, JSON.stringify(cardData)).then((response) => {
                         console.log(response);
                         newDivOne.parentNode.removeChild(newDivOne);
                     });
