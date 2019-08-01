@@ -7,7 +7,7 @@ const userID = sessionStorage.getItem('ID');
 
 function loadHome() {
     sessionStorage.clear();
-    window.location = 'LogIn.html';
+    window.location = 'index.html';
 }
 
 function loadSearchDatabase() {
