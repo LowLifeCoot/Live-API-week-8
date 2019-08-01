@@ -1,6 +1,5 @@
-var onlne = true;
 function searchForCards() {
-    onlne = true;
+   var onlne = true;
     makeRequest('GET', EXTERNAL_API_URL).then((response) => {
         let data = JSON.parse(JSON.stringify(response));
         let cards = data.cards
@@ -9,7 +8,7 @@ function searchForCards() {
 }
 
 function showDeck() {
-    onlne = false;
+    var onlne = false;
     makeRequest('GET', EXTERNAL_URL + '/api/deck/getUsers/' + userID).then((response) => {
         let data = JSON.parse(JSON.stringify(response));
         outputSearchResults(data);
