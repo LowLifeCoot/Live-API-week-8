@@ -9,7 +9,7 @@ function emptyData() {
 }
 
 function getUserData() {
-    makeRequest('GET', BASE_URL + "/api/account/get/" + userID).then(userDetails => {
+    makeRequest('GET', EXTERNAL_URL + "/api/account/get/" + userID).then(userDetails => {
         for (const j in userDetails) {
             for (k in userDetails[j]) {
                 if (k != 'id') {
@@ -25,7 +25,7 @@ function getUserData() {
 function deleteUserData() {
   var r = confirm("Are you sure?");
   if (r){
-      makeRequest('DELETE', BASE_URL + "/api/account/delete/" + userID).then({
+      makeRequest('DELETE', EXTERNAL_URL + "/api/account/delete/" + userID).then({
       });
       loadHome();
   }else{
