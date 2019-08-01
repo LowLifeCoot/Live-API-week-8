@@ -1,0 +1,65 @@
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="styleSheet" href="RegisterStyles.css">
+
+<body background="Background.jpg">
+    <div class="grid-container">
+        <div class="Main-Body">
+            <div class="Title"></div>
+            <div class="Input"></div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header">
+                    <h1 id="TitleCard">
+                        MTG: EDH <small>Log In Page </small>
+                    </h1>
+                </div>
+
+                <form onsubmit="return handleLogIn(this)">
+                    <label for="Username"> UserName </label>
+                    <input id="name" class="form-control" type="text">
+                    <br>
+                    <label for="Password"> Password </label>
+                    <input id="password" class="form-control" type="password">
+                    <br>
+                    <button> LogIn </button>
+                    <input type="reset" value="Reset" />
+                </form>
+
+                <button id="myBtn">Register</button>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="body">Register page</p>
+            <form onsubmit="return handleNewUser(this)">
+                <label for="Username"> UserName </label>
+                <input id="name" class="form-control" type="text">
+                <br>
+                <label for="Password"> Password </label>
+                <input id="password" class="form-control" type="password">
+                <br>
+                <button> Register </button>
+                <input type="reset" value="Reset" />
+            </form>
+        </div>
+    </div>
+</body>
+<script src="makeRequest.js"></script>
+<script src="navigation.js"></script>
+<script src="register.js"></script>
+<script src="DisplayForm.js"></script>
+
+</html>

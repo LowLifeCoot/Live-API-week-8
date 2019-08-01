@@ -1,0 +1,55 @@
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="styleSheet" href="Template.css">
+
+<body background="Background.jpg">
+
+  <div class="container-fluid">
+
+    <div class="row title" Style="height: 100px;">
+      <div class="col-2">
+        <img src="WhiteManaSymbol.png"  onload="searchForCards()" style="width:100px; height:100px;" class="img-fluid" alt="RedManaSymbol">
+      </div>
+      <div class="col-10">
+        <h1>UserInfo</h1>
+      </div>
+    </div>
+
+    <div class="row navigation">
+      <div class="col-3">
+        <br>
+        <br>
+        <button type="button" class="btn btn-outline-dark" onclick="loadSearchDatabase()"><strong>Search
+            Database</strong></button>
+        <br>
+        <br>
+        <button type="button" class="btn btn-outline-dark"
+          onclick="loadUserInformation()"><strong>Information</strong></button>
+        <br>
+        <br>
+        <button class="btn btn-outline-dark" onclick="loadDeckList()" type="button">
+          <strong>Deck List</strong>
+        </button>
+        <br>
+        <br>
+        <button type="button" class="btn btn-outline-dark" onclick="loadHome()"><strong>LogOut</strong></button>
+      </div>
+
+      <div class="col-9.5 MainBody" id="MainBody">
+        <br>
+        <br>
+        <button onclick="searchForCards()" class="btn btn-outline-dark" type="button">ClickMe</button>
+        <div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="makeRequest.js"></script>
+  <script src="navigation.js"></script>
+  <script src="ShowDeckData.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+html,
+body,
+
+.body { 
+  background-image: url('Background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+}
+
+.grid-container {
+  height: 100%;
+  margin: 0;
+}
+
+.grid-container * {
+  border: .5px solid pink;
+  position: relative;
+}
+
+.grid-container *:after {
+  content: attr(class);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "Title-Area Title-Area Title-Area Title-Area Title-Area" "Navigation-Area MainBody MainBody MainBody MainBody" "Navigation-Area MainBody MainBody MainBody MainBody" "Navigation-Area MainBody MainBody MainBody MainBody";
+}
+
+.Title-Area {
+  display: grid;
+  grid-template-columns: 0.6fr 1.4fr 1fr;
+  grid-template-rows: 1.2fr 0.8fr 1fr;
+  grid-template-areas: "Logo . ." "Logo Page-Name ." ". . .";
+  grid-area: Title-Area;
+}
+
+.Logo {
+  grid-area: Logo;
+}
+
+.Page-Name {
+  grid-area: Page-Name;
+}
+
+.Navigation-Area {
+  grid-area: Navigation-Area;
+}
+
+.head{
+  height: 20px;
+}
+
+.navigation{
+  padding-right: 70px;
+}
+

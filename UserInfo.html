@@ -1,0 +1,82 @@
+<html>
+
+<body background="Background.jpg">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="styleSheet" href="Template.css">
+
+    <div class="container-fluid">
+
+        <div class="row title" Style="height: 100px;">
+            <div class="col-2">
+                <img src="WhiteManaSymbol.png" style="width:100px; height:100px;" class="img-fluid" alt="RedManaSymbol">
+            </div>
+            <div class="col-10">
+                <h1>UserInfo</h1>
+            </div>
+        </div>
+
+        <div class="row navigation">
+            <div class="col-3">
+                <br>
+                <br>
+                <button type="button" class="btn btn-outline-dark" onclick="loadSearchDatabase()"><strong>Search
+                        Database</strong></button>
+                <br>
+                <br>
+                <button type="button" class="btn btn-outline-dark"
+                    onclick="loadUserInformation()"><strong>Information</strong></button>
+                <br>
+                <br>
+                <button class="btn btn-outline-dark" onclick="loadDeckList()" type="button">
+                    <strong>Deck List</strong>
+                </button>
+                <br>
+                <br>
+                <button type="button" class="btn btn-outline-dark" onclick="loadHome()"><strong>LogOut</strong></button>
+            </div>
+
+            <div class="col-8 MainBody">
+                <h1>
+                    Your details are:
+                </h1>
+                <div>
+                    <br>
+                    <div id="histEl"></div>
+                    <div>
+                        <button id="myBtn" class="btn btn-outline-dark"><strong>Change Data</strong></button>
+                        <button type="button" class="btn btn-outline-dark" onclick="deleteUserData()"><strong>Delete
+                                Data</strong></button>
+                    </div>
+                </div>
+
+                <!-- The Modal -->
+                <div id="myModal" class="modal dark">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p id="body">Update information</p>
+                        <form onsubmit="return handleUpdate(this)">
+                            <label for="Username"> New UserName </label>
+                            <input id="name" class="form-control" type="text">
+                            <br>
+                            <label for="Password"> New Password </label>
+                            <input id="password" class="form-control" type="password">
+                            <br>
+                            <button> Confirm </button>
+                            <input type="reset" value="Reset" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="makeRequest.js"></script>
+    <script src="DisplayForm.js"></script>
+    <script src="register.js"></script>
+    <script src="navigation.js"></script>
+    <script src="setUserData.js"></script>
+</body>
+
+</html>
