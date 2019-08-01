@@ -1,3 +1,4 @@
+var online = true;
 function searchForCards() {
    var onlne = true;
     makeRequest('GET', EXTERNAL_API_URL).then((response) => {
