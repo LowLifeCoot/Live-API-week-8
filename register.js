@@ -13,7 +13,7 @@ function handleFormLogic(form) {
 
 function handleLogIn(form) {
     handleFormLogic(form);
-    makeRequest('POST', BASE_URL + "/api/account/login", JSON.stringify(userData)).then(data => {
+    makeRequest('POST', EXTERNAL_URL + "/api/account/login", JSON.stringify(userData)).then(data => {
         console.log(JSON.stringify(data));
         if (JSON.stringify(data) === "{\"message\":\"Fail\"}") {
             alert("Please enter a valid name and password");
@@ -34,7 +34,7 @@ function handleNewUser(form) {
         alert("Please enter a valid name and password");
         console.log(name + "This will not send");
     } else {
-        makeRequest('POST', BASE_URL + "/api/account/add", JSON.stringify(userData)).then(data => {
+        makeRequest('POST', EXTERNAL_URL + "/api/account/add", JSON.stringify(userData)).then(data => {
             if (JSON.stringify(data) === "{\"checkName\":\"Taken\"}") {
                 alert("This username is taken");
                 console.log('This has failed properly');
@@ -57,7 +57,7 @@ function handleUpdate(form) {
         alert("Please enter a valid name and password");
         console.log(name + "This will not send");
     } else {
-        makeRequest('POST', BASE_URL + "/api/account/update/" + userID, JSON.stringify(userData)).then(() => {
+        makeRequest('POST', EXTERNAL_URL + "/api/account/update/" + userID, JSON.stringify(userData)).then(() => {
             emptyData();
             getUserData();
         });
