@@ -16,9 +16,19 @@ function showDeck() {
     })
 }
 
+
+function emptyData() {
+    const toDel = document.getElementById('MainBody');
+    var child = toDel.lastElementChild;
+    while (child) {
+        toDel.removeChild(child)
+        child = toDel.lastElementChild;
+    }
+}
+
 function outputSearchResults(cards) {
     console.log(cards);
-
+emptyData();
     const mainDiv = document.getElementById('MainBody');
     mainDiv.setAttribute('class', 'row');
 
@@ -61,8 +71,6 @@ function outputSearchResults(cards) {
                 if (onlne) {
                     makeRequest('POST', EXTERNAL_URL + '/api/deck/add', JSON.stringify(cardData)).then((response) => {
                         console.log(response);
-                        toDel = document.getElementById(card.name);
-                        console.log(toDel);
                         newDivOne.parentNode.removeChild(newDivOne);
                     });
                 } else if (!onlne) {
