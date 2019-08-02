@@ -60,6 +60,7 @@ function handleUpdate(form) {
         makeRequest('POST', EXTERNAL_URL + "/api/account/update/" + userID, JSON.stringify(userData)).then(() => {
             emptyData();
             getUserData();
+            loadUserInformation();
         });
     }
     return false;
