@@ -23,8 +23,8 @@ function getUserData() {
 }
 
 function deleteUserData() {
-  var r = confirm("Are you sure?");
-  if (r){
+  var confirmation = confirm("Are you sure?");
+  if (confirmation){
       makeRequest('DELETE', EXTERNAL_URL + "/api/account/delete/" + userID).then({
       });
       loadHome();
